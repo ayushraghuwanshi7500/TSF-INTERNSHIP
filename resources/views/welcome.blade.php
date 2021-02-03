@@ -29,16 +29,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Create a User</a>
+                    <a class="nav-link" href="/createUser">Create a User</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Make a Transaction</a>
+                    <a class="nav-link" href="/makeTransaction">Make a Transaction</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tansaction History</a>
+                    <a class="nav-link" href="/transactionHistory">Transaction History</a>
                 </li>
             </ul>
 
@@ -58,7 +58,7 @@
         <br>
         <div class="row">
             <div class="col-lg-4">
-                <a href="#" style="color: black;">
+                <a href="/createUser" style="color: black;">
                     <div class="card">
                         <div class="card-body row">
                             <div class="col col-lg-8">
@@ -74,7 +74,7 @@
                 </a>
             </div>
             <div class="col-lg-4">
-                <a href="#" style="color: black;">
+                <a href="/makeTransaction" style="color: black;">
                     <div class="card">
                         <div class="card-body row">
                             <div class="col col-lg-8">
@@ -91,7 +91,7 @@
                 </a>
             </div>
             <div class="col-lg-4">
-                <a href="#" style="color: black;">
+                <a href="/transactionHistory" style="color: black;">
                     <div class="card">
                         <div class="card-body row">
                             <div class="col col-lg-8">

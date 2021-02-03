@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/','FrontendController@welcome');
+Route::get('createUser','App\Http\Controllers\FrontendController@createUser');
+Route::get('makeTransaction','App\Http\Controllers\FrontendController@makeTransaction');
+Route::get('transactionHistory','App\Http\Controllers\FrontendController@transactionHistory');
