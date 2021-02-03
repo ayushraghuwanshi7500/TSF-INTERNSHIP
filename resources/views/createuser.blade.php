@@ -26,7 +26,7 @@
                     <a class="nav-link" href="/">Home </a>
                 </li>
                 <li class="nav-item  active">
-                    <a class="nav-link" href="/createUser">Create a User<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/createUser">Create User<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/makeTransaction">Make a Transaction</a>

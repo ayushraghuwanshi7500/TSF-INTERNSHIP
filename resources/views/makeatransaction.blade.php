@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
     <style>
-    
+
     </style>
 </head>
 
@@ -26,7 +26,7 @@
                     <a class="nav-link" href="/">Home </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/createUser">Create a User</a>
+                    <a class="nav-link" href="/createUser">Create User</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/makeTransaction">Make a Transaction<span class="sr-only">(current)</span></a>
@@ -38,4 +38,47 @@
 
         </div>
     </nav>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+            <h3 style="text-align: center;">Make a Transaction</h3>
+            <br>
+            <table class="table table-hoverable">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="text-align: center;">Sr. No.</th>
+                        <th scope="col" style="text-align: center;">Name</th>
+                        <th scope="col" style="text-align: center;">Email Address</th>
+                        <th scope="col" style="text-align: center;">Balance</th>
+                        <th scope="col" style="text-align: center;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" style="text-align: center;">1</td>
+                        <td style="text-align: center;">Ayush Raghuwanshi</td>
+                        <td style="text-align: center;">ayushraghuwanshi7500@gmail.com</td>
+                        <td style="text-align: center;">10,000</td>
+                        <td style="text-align: center;">
+                            <button type="button" class="btn btn-info">Transact</button>
+                            <button type="button" class="btn btn-secondary">Remove</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="row" style="text-align: center;">2</td>
+                        <td style="text-align: center;">Ayush Raghuwanshi</td>
+                        <td style="text-align: center;">ayushraghuwanshi7500@gmail.com</td>
+                        <td style="text-align: center;">10,000</td>
+                        <td style="text-align: center;">
+                            <button type="button" class="btn btn-info">Transact</button>
+                            <button type="button" class="btn btn-secondary">Remove</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
 </body>

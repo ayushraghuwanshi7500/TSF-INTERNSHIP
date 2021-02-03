@@ -63,7 +63,7 @@
                     <div class="card">
                         <div class="card-body row">
                             <div class="col col-lg-8">
-                                <h5 class="card-title">Create a User</h5>
+                                <h5 class="card-title">Create User</h5>
                             </div>
                             <div class="col col-lg-4">
                                 <i class="fas fa-user  fa-3x"></i>

@@ -26,7 +26,7 @@
                     <a class="nav-link" href="/">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/createUser">Create a User</a>
+                    <a class="nav-link" href="/createUser">Create User</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/makeTransaction">Make a Transaction</a>
@@ -38,4 +38,41 @@
 
         </div>
     </nav>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+            <h3 style="text-align: center;">Transaction History</h3>
+            <br>
+            <table class="table table-hoverable">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="text-align: center;">Sr. No.</th>
+                        <th scope="col" style="text-align: center;">Sender</th>
+                        <th scope="col" style="text-align: center;">Reciever</th>
+                        <th scope="col" style="text-align: center;">Amount</th>
+                        <th scope="col" style="text-align: center;">Date of Transaction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" style="text-align: center;">1</td>
+                        <td style="text-align: center;">Ayush Raghuwanshi</td>
+                        <td style="text-align: center;">Sanmith Kurian</td>
+                        <td style="text-align: center;">1,000</td>
+                        <td style="text-align: center;">12-02-2000</td>
+                    </tr>
+                    <tr>
+                        <td scope="row" style="text-align: center;">2</td>
+                        <td style="text-align: center;">Ayush Raghuwanshi</td>
+                        <td style="text-align: center;">Eshan Goel</td>
+                        <td style="text-align: center;">2,000</td>
+                        <td style="text-align: center;">13-02-2000</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
 </body>
