@@ -15,6 +15,7 @@
         
         font-size: 1.3rem;
     }
+    
     </style>
 </head>
 
@@ -95,7 +96,7 @@
                     <div class="card">
                         <div class="card-body row">
                             <div class="col col-lg-8">
-                                <h5 class="card-title">Tansaction History</h5>
+                                <h5 class="card-title">Transaction History</h5>
                             </div>
                             <div class="col col-lg-4">
                                 <i class="fas fa-history fa-3x"></i>
