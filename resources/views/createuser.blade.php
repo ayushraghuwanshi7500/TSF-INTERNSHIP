@@ -39,6 +39,9 @@
         </div>
     </nav>
     <br>
+    
+    @include('inc.messages')
+    
     <div class="container">
         <div class="jumbotron">
             <h3 style="text-align: center;">Create User</h3>
@@ -66,29 +69,11 @@
                 <br>
                 <div class="form-group row">
                     <div class="col col-lg-12 text-center">
-                        <button type="submit" value="Submit" class="btn btn-success "  data-toggle="modal" data-target="#exampleModal">Create User</button>
+                        <button type="submit" value="Submit" class="btn btn-success ">Create User</button>
                         <button type="button" class="btn btn-danger ">Reset Info</button>
                     </div>
                 </div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Created </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        User Created Successfully!
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Okay</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
             </form>
         </div>
