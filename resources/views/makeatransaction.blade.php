@@ -76,7 +76,7 @@
                         <td style="text-align: center;">{{$user['balance']}}</td>
                         <td style="text-align: center;">{{$user['created_at']}}</td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{$user['username']}}{{$user['id']}}">Transact</button>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#b{{$user['id']}}">Transact</button>
 
                             <!-- <a href="delete/{{$user['id']}}"> -->
                             <button type="button" id="{{$user['username']}}" class="btn btn-secondary" data-toggle="modal" data-target="#a{{$user['id']}}"> Remove</button>
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal fade" id="{{$user['username']}}{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="b{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
