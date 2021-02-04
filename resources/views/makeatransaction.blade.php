@@ -148,7 +148,7 @@
 
                                             </div>
                                             <div class="col col-lg-9">
-                                                <p id="amount" style="color:red;"  class="form-text  col-lg-12 text-left">You cannot transfer more than {{$user['balance']}} Rs. </p>
+                                                <p id="amount" style="color:red;"  class="form-text col-lg-12 text-left">You cannot transfer more than {{$user['balance']}} Rs. </p>
                                             </div>
                                         </div>
                                     </div>
