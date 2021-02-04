@@ -8,7 +8,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
     <style>
-    
+        /* Automatic Serial Number Row */
+        .css-serial {
+            counter-reset: serial-number;
+            /* Set the serial number counter to 0 */
+        }
+
+        .css-serial td:first-child:before {
+            counter-increment: serial-number;
+            /* Increment the serial number counter */
+            content: counter(serial-number);
+            /* Display the counter */
+        }
     </style>
 </head>
 
@@ -43,26 +54,26 @@
         <div class="jumbotron">
             <h3 style="text-align: center;">Transaction History</h3>
             <br>
-            <table class="table table-hoverable">
+            <table class="table table-hover table-bordered css-serial">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col" style="text-align: center;">Sr. No.</th>
                         <th scope="col" style="text-align: center;">Sender</th>
                         <th scope="col" style="text-align: center;">Reciever</th>
                         <th scope="col" style="text-align: center;">Amount</th>
-                        <th scope="col" style="text-align: center;">Date of Transaction</th>
+                        <th scope="col" style="text-align: center;">Date and Time of Transaction</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td scope="row" style="text-align: center;">1</td>
+                        <td scope="row" style="text-align: center;"></td>
                         <td style="text-align: center;">Ayush Raghuwanshi</td>
                         <td style="text-align: center;">Sanmith Kurian</td>
                         <td style="text-align: center;">1,000</td>
                         <td style="text-align: center;">12-02-2000</td>
                     </tr>
                     <tr>
-                        <td scope="row" style="text-align: center;">2</td>
+                        <td scope="row" style="text-align: center;"></td>
                         <td style="text-align: center;">Ayush Raghuwanshi</td>
                         <td style="text-align: center;">Eshan Goel</td>
                         <td style="text-align: center;">2,000</td>

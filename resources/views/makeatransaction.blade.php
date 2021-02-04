@@ -8,14 +8,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
     <style>
-/* Automatic Serial Number Row */
-.css-serial {
- counter-reset: serial-number; /* Set the serial number counter to 0 */
-}
-.css-serial td:first-child:before {
- counter-increment: serial-number; /* Increment the serial number counter */
- content: counter(serial-number); /* Display the counter */
-}
+        /* Automatic Serial Number Row */
+        .css-serial {
+            counter-reset: serial-number;
+            /* Set the serial number counter to 0 */
+        }
+
+        .css-serial td:first-child:before {
+            counter-increment: serial-number;
+            /* Increment the serial number counter */
+            content: counter(serial-number);
+            /* Display the counter */
+        }
     </style>
 </head>
 
@@ -57,16 +61,16 @@
                         <th scope="col" style="text-align: center;">Name</th>
                         <th scope="col" style="text-align: center;">Email Address</th>
                         <th scope="col" style="text-align: center;">Balance</th>
-                        <th scope="col" style="text-align: center;">Created At</th>
+                        <th scope="col" style="text-align: center;">Account Created At</th>
                         <th scope="col" style="text-align: center;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($users as $user)
                     <tr>
-                        
+
                         <td scope="row" style="text-align: center;"></td>
-                        
+
                         <td style="text-align: center;">{{$user['username']}}</td>
                         <td style="text-align: center;">{{$user['email']}}</td>
                         <td style="text-align: center;">{{$user['balance']}}</td>
@@ -74,12 +78,16 @@
                         <td style="text-align: center;">
                             <button type="button" class="btn btn-info">Transact</button>
                             <!-- <a href="delete/{{$user['id']}}">Delete</a> -->
-                            <a href="delete/{{$user['id']}}"><button type="button"  class="btn btn-secondary"> Remove</button></a> 
+                            <a href="delete/{{$user['id']}}">
+                                <button type="button" id="{{$user['username']}}" class="btn btn-secondary" onclick="myfunc(this.id)"> Remove</button>
+                            </a>
                         </td>
-                        
+
+
                     </tr>
-                    
-                    
+
+
+
                     @endforeach
 
                 </tbody>
@@ -88,4 +96,9 @@
         </div>
 
     </div>
+    <script>
+        function myfunc(id) {
+            alert("User " + id + " was removed.");
+        }
+    </script>
 </body>
