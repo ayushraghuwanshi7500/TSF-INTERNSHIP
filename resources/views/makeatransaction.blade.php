@@ -78,9 +78,8 @@
                         <td style="text-align: center;">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#b{{$user['id']}}">Transact</button>
 
-                            <!-- <a href="delete/{{$user['id']}}"> -->
                             <button type="button" id="{{$user['username']}}" class="btn btn-secondary" data-toggle="modal" data-target="#a{{$user['id']}}"> Remove</button>
-                            <!-- </a> -->
+
                         </td>
                         <div class="modal fade" id="a{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -92,7 +91,8 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Are you sure you want to remove user ?<hr>
+                                        Are you sure you want to remove user ?
+                                        <hr>
                                         <p> <strong>Name:</strong> {{$user['username']}} </p>
                                         <p><strong>Email:</strong> {{$user['email']}}</p>
                                         <p><strong>Balance:</strong> {{$user['balance']}} </p>
@@ -125,9 +125,13 @@
                                             <label class="col-lg-2 text-center" for="emailid">
                                                 <h6>To: </h6>
                                             </label>
-                                            <select class="form-control col-lg-9 text-left" aria-placeholder="Select to whom who have to send the money" type="number" name="semester" id="semester" required>
+                                            <select class="form-control col-lg-9 text-left" aria-placeholder="" type="number" name="semester" id="semester" required>
                                                 <option disabled selected>Select to whom who want to send the money</option>
-
+                                                @foreach($users as $myuser)
+                                                @if($myuser['id']!=$user['id'])
+                                                <option value="{{$myuser['id']}}">{{$myuser['username']}}-(Balance-{{$myuser['balance']}})</option>
+                                                @endif
+                                                @endforeach
                                             </select>
 
                                         </div>
@@ -137,6 +141,15 @@
                                             </label>
                                             <input type="number" placeholder="Enter the amount you want to transfer" class="form-control col-lg-9 text-left" id="name" name="username" aria-describedby="name" required>
 
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col col-lg-1">
+
+                                            </div>
+                                            <div class="col col-lg-9">
+                                                <p id="amount" style="color:red;"  class="form-text  col-lg-12 text-left">You cannot transfer more than {{$user['balance']}} Rs. </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
