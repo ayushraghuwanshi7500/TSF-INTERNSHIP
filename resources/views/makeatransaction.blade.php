@@ -76,12 +76,76 @@
                         <td style="text-align: center;">{{$user['balance']}}</td>
                         <td style="text-align: center;">{{$user['created_at']}}</td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn btn-info">Transact</button>
-                            <!-- <a href="delete/{{$user['id']}}">Delete</a> -->
-                            <a href="delete/{{$user['id']}}">
-                                <button type="button" id="{{$user['username']}}" class="btn btn-secondary" onclick="myfunc(this.id)"> Remove</button>
-                            </a>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{$user['username']}}{{$user['id']}}">Transact</button>
+
+                            <!-- <a href="delete/{{$user['id']}}"> -->
+                            <button type="button" id="{{$user['username']}}" class="btn btn-secondary" data-toggle="modal" data-target="#a{{$user['id']}}"> Remove</button>
+                            <!-- </a> -->
                         </td>
+                        <div class="modal fade" id="a{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Remove User</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to remove user ?<hr>
+                                        <p> <strong>Name:</strong> {{$user['username']}} </p>
+                                        <p><strong>Email:</strong> {{$user['email']}}</p>
+                                        <p><strong>Balance:</strong> {{$user['balance']}} </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <a href="delete/{{$user['id']}}"><button type="button" class="btn btn-primary">Yes, remove</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="{{$user['username']}}{{$user['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Transaction</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group row">
+                                            <label class="col-lg-2 text-center" for="name">
+                                                <h6>From:</h6>
+                                            </label>
+                                            <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-9 text-left" id="name" name="username" aria-describedby="name" value="{{$user['username']}} (Acc. Balance-{{$user['balance']}})" disabled required>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-2 text-center" for="emailid">
+                                                <h6>To: </h6>
+                                            </label>
+                                            <select class="form-control col-lg-9 text-left" aria-placeholder="Select to whom who have to send the money" type="number" name="semester" id="semester" required>
+                                                <option disabled selected>Select to whom who want to send the money</option>
+
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-2 text-center" for="name">
+                                                <h6>Amount: </h6>
+                                            </label>
+                                            <input type="number" placeholder="Enter the amount you want to transfer" class="form-control col-lg-9 text-left" id="name" name="username" aria-describedby="name" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Make Transaction</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </tr>
