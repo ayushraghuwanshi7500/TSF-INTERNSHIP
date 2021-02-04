@@ -41,32 +41,57 @@
     <br>
     <div class="container">
         <div class="jumbotron">
-            <h3  style="text-align: center;">Create User</h3>
+            <h3 style="text-align: center;">Create User</h3>
             <br>
-            <form action="">
+            <form action="submit" method="POST">
+                @csrf
                 <div class="form-group row">
-                    <label class="col-lg-4 text-center" for="name" > <h6>Name</h6> </label>
-                    <input  type="text" placeholder="Enter the name of the user" class="form-control col-lg-6 text-left" id="name" aria-describedby="name" required>
+                    <label class="col-lg-4 text-center" for="name">
+                        <h6>Name</h6>
+                    </label>
+                    <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-6 text-left" id="name" name="username" aria-describedby="name" required>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-4 text-center" for="emailid" > <h6>Email address</h6> </label>
-                    <input  type="email" placeholder="Enter the email address of the user" class="form-control col-lg-6 text-left" id="emailid" aria-describedby="emailHelp" required>
+                    <label class="col-lg-4 text-center" for="emailid">
+                        <h6>Email address</h6>
+                    </label>
+                    <input type="email" placeholder="Enter the email address of the user" class="form-control col-lg-6 text-left" id="emailid" name="email" aria-describedby="emailHelp" required>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-4 text-center" for="balance" > <h6>Balance in Account</h6> </label>
-                    <input  type="number" placeholder="Enter the balance in the account of the user" class="form-control col-lg-6 text-left" id="balance" aria-describedby="balance" required>
+                    <label class="col-lg-4 text-center" for="balance">
+                        <h6>Balance in Account</h6>
+                    </label>
+                    <input type="number" placeholder="Enter the balance in the account of the user" class="form-control col-lg-6 text-left" id="balance" name="balance" aria-describedby="balance" required>
                 </div>
                 <br>
                 <div class="form-group row">
                     <div class="col col-lg-12 text-center">
-                        <button type="button" class="btn btn-success ">Create User</button>
+                        <button type="submit" value="Submit" class="btn btn-success "  data-toggle="modal" data-target="#exampleModal">Create User</button>
                         <button type="button" class="btn btn-danger ">Reset Info</button>
                     </div>
                 </div>
-                
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Created </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        User Created Successfully!
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
             </form>
         </div>
     </div>
-
 
 </body>

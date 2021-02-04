@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('createUser','App\Http\Controllers\FrontendController@createUser');
 Route::get('makeTransaction','App\Http\Controllers\FrontendController@makeTransaction');
 Route::get('transactionHistory','App\Http\Controllers\FrontendController@transactionHistory');
+Route::post('submit','App\Http\Controllers\DatabaseController@save');
