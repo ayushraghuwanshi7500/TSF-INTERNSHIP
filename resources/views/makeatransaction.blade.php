@@ -50,31 +50,31 @@
                         <th scope="col" style="text-align: center;">Name</th>
                         <th scope="col" style="text-align: center;">Email Address</th>
                         <th scope="col" style="text-align: center;">Balance</th>
+                        <th scope="col" style="text-align: center;">Created At</th>
                         <th scope="col" style="text-align: center;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($users as $user)
                     <tr>
-                        <td scope="row" style="text-align: center;">1</td>
-                        <td style="text-align: center;">Ayush Raghuwanshi</td>
-                        <td style="text-align: center;">ayushraghuwanshi7500@gmail.com</td>
-                        <td style="text-align: center;">10,000</td>
+                        
+                        <td scope="row" style="text-align: center;">{{$user['id']}}</td>
+                        
+                        <td style="text-align: center;">{{$user['username']}}</td>
+                        <td style="text-align: center;">{{$user['email']}}</td>
+                        <td style="text-align: center;">{{$user['balance']}}</td>
+                        <td style="text-align: center;">{{$user['created_at']}}</td>
                         <td style="text-align: center;">
                             <button type="button" class="btn btn-info">Transact</button>
-                            <button type="button" class="btn btn-secondary">Remove</button>
+                            <!-- <a href="delete/{{$user['id']}}">Delete</a> -->
+                            <a href="delete/{{$user['id']}}"><button type="button"  class="btn btn-secondary"> Remove</button></a> 
                         </td>
-                    </tr>
-                    <tr>
-                        <td scope="row" style="text-align: center;">2</td>
-                        <td style="text-align: center;">Ayush Raghuwanshi</td>
-                        <td style="text-align: center;">ayushraghuwanshi7500@gmail.com</td>
-                        <td style="text-align: center;">10,000</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn btn-info">Transact</button>
-                            <button type="button" class="btn btn-secondary">Remove</button>
-                        </td>
+                        
                     </tr>
                     
+                    
+                    @endforeach
+
                 </tbody>
             </table>
 

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DatabaseController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,5 @@ Route::get('createUser','App\Http\Controllers\FrontendController@createUser');
 Route::get('makeTransaction','App\Http\Controllers\FrontendController@makeTransaction');
 Route::get('transactionHistory','App\Http\Controllers\FrontendController@transactionHistory');
 Route::post('submit','App\Http\Controllers\DatabaseController@save');
+Route::get('makeTransaction',[DatabaseController::class,'show']);
+Route::get('delete/{id}',[DatabaseController::class,'delete']);

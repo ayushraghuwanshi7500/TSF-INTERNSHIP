@@ -8,6 +8,15 @@ use App\Models\createUser;
 class DatabaseController extends Controller
 {
     //
+    function show(){
+        $data=createUser::all();
+        return view('makeatransaction',['users'=>$data]);
+    }
+    function delete($id){
+        $data=createUser::find($id);
+        $data->delete();
+        return redirect('makeTransaction');
+    }
     function save(Request $req)
     {
         
