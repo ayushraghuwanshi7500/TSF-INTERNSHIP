@@ -8,7 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
     <style>
-
+/* Automatic Serial Number Row */
+.css-serial {
+ counter-reset: serial-number; /* Set the serial number counter to 0 */
+}
+.css-serial td:first-child:before {
+ counter-increment: serial-number; /* Increment the serial number counter */
+ content: counter(serial-number); /* Display the counter */
+}
     </style>
 </head>
 
@@ -43,7 +50,7 @@
         <div class="jumbotron">
             <h3 style="text-align: center;">Make a Transaction</h3>
             <br>
-            <table class="table table-hoverable">
+            <table class="table table-hover table-bordered css-serial">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col" style="text-align: center;">Sr. No.</th>
@@ -58,7 +65,7 @@
                     @foreach($users as $user)
                     <tr>
                         
-                        <td scope="row" style="text-align: center;">{{$user['id']}}</td>
+                        <td scope="row" style="text-align: center;"></td>
                         
                         <td style="text-align: center;">{{$user['username']}}</td>
                         <td style="text-align: center;">{{$user['email']}}</td>
