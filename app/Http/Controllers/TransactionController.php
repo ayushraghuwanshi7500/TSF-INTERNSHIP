@@ -31,7 +31,7 @@ class TransactionController extends Controller
         $transactions->reciver=$req->reciver;
         $transactions->amt_transfer=$req->amt_transfer;
         $transactions->save();
-        return redirect('/makeTransaction');
+        return redirect('/transactionHistory');
         // return $req->input();
 
     }
