@@ -108,54 +108,58 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Transaction</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Transaction Details</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="form-group row">
-                                            <label class="col-lg-2 text-center" for="name">
-                                                <h6>From:</h6>
-                                            </label>
-                                            <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-9 text-left" id="name" name="username" aria-describedby="name" value="{{$user['username']}} (Acc. Balance-{{$user['balance']}})" disabled required>
-
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-2 text-center" for="emailid">
-                                                <h6>To: </h6>
-                                            </label>
-                                            <select class="form-control col-lg-9 text-left" aria-placeholder="" type="number" name="semester" id="semester" required>
-                                                <option disabled selected>Select to whom who want to send the money</option>
-                                                @foreach($users as $myuser)
-                                                @if($myuser['id']!=$user['id'])
-                                                <option value="{{$myuser['id']}}">{{$myuser['username']}}-(Balance-{{$myuser['balance']}})</option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-2 text-center" for="name">
-                                                <h6>Amount: </h6>
-                                            </label>
-                                            <input type="number" placeholder="Enter the amount you want to transfer" class="form-control col-lg-9 text-left" id="name" name="username" aria-describedby="name" required>
-
-
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col col-lg-1">
+                                    <form action="maketransaction" method="POST">
+                                        @csrf
+                                        <div class="modal-body">
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 " for="sender">
+                                                    <h6>From:</h6>
+                                                </label>
+                                                <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-9 text-left" id="name" name="sender" aria-describedby="name" value="{{$user['username']}}" readonly>
 
                                             </div>
-                                            <div class="col col-lg-9">
-                                                <p id="amount" style="color:red;"  class="form-text col-lg-12 text-left">You cannot transfer more than {{$user['balance']}} Rs. </p>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 " for="reciver">
+                                                    <h6>To: </h6>
+                                                </label>
+                                                <select class="form-control col-lg-9 text-left" aria-placeholder="" type="number"  name="reciver"  id="semester" required>
+                                                    <option disabled selected>Select to whom who want to send the money</option>
+                                                    @foreach($users as $myuser)
+                                                    @if($myuser['id']!=$user['id'])
+                                                    <option value="{{$myuser['username']}}">{{$myuser['username']}}</option>
+                                                    @endif
+                                                    @endforeach
+                                                </select>
+
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 " for="amt_transfer">
+                                                    <h6>Amount: </h6>
+                                                </label>
+                                                <input type="number" value=0 placeholder="Enter the amount you want to transfer" class="form-control col-lg-9 text-left" oninput="validate(this.id)" id="{{$user['balance']}}a{{$user['id']}}" name="amt_transfer" aria-describedby="name" required>
+
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-lg-2">
+
+                                                </label>
+                                                <small id="amount" style="color:red;" class="form-text">You cannot transfer more than {{$user['balance']}} Rs. </small>
+
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Make Transaction</button>
-                                    </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" value="Submit" class="btn btn-primary" id="abc{{$user['balance']}}a{{$user['id']}}" onclick="myfunc()">Make Transaction</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -174,8 +178,19 @@
 
     </div>
     <script>
-        function myfunc(id) {
-            alert("User " + id + " was removed.");
+        function myfunc() {
+            alert("Transaction Successful!");
+        }
+        function validate(id){
+            var balance=id.split('a');
+            var myval=document.getElementById(id).value;
+            
+            if(parseInt(myval)>parseInt(balance[0])){
+                document.getElementById("abc"+id).disabled=true;
+            }
+            else{
+                document.getElementById("abc"+id).disabled=false;
+            }
         }
     </script>
 </body>

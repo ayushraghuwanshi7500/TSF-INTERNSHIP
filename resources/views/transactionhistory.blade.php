@@ -65,21 +65,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($transactions as $transaction)
                     <tr>
                         <td scope="row" style="text-align: center;"></td>
-                        <td style="text-align: center;">Ayush Raghuwanshi</td>
-                        <td style="text-align: center;">Sanmith Kurian</td>
-                        <td style="text-align: center;">1,000</td>
-                        <td style="text-align: center;">12-02-2000</td>
-                    </tr>
-                    <tr>
-                        <td scope="row" style="text-align: center;"></td>
-                        <td style="text-align: center;">Ayush Raghuwanshi</td>
-                        <td style="text-align: center;">Eshan Goel</td>
-                        <td style="text-align: center;">2,000</td>
-                        <td style="text-align: center;">13-02-2000</td>
+                        <td style="text-align: center;">{{$transaction['sender']}}</td>
+                        <td style="text-align: center;">{{$transaction['reciver']}}</td>
+                        <td style="text-align: center;">{{$transaction['amt_transfer']}}</td>
+                        <td style="text-align: center;">{{$transaction['created_at']}}</td>
                     </tr>
                     
+                    @endforeach
                 </tbody>
             </table>
 

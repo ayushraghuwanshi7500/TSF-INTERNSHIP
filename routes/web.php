@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('transactionHistory','App\Http\Controllers\FrontendController@transac
 Route::post('submit','App\Http\Controllers\DatabaseController@save');
 Route::get('makeTransaction',[DatabaseController::class,'show']);
 Route::get('delete/{id}',[DatabaseController::class,'delete']);
+Route::post('maketransaction',[TransactionController::class,'save']);
+Route::get('transactionHistory',[TransactionController::class,'show']);

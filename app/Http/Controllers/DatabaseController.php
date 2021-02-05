@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\createUser;
 
+
 class DatabaseController extends Controller
 {
     //
@@ -28,4 +29,5 @@ class DatabaseController extends Controller
         return redirect('/createUser');
 
     }
+    
 }
