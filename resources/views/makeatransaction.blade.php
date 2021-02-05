@@ -127,7 +127,7 @@
                                                 <label class="col-lg-2 " for="reciver">
                                                     <h6>To: </h6>
                                                 </label>
-                                                <select class="form-control col-lg-9 text-left" aria-placeholder="" type="number"  name="reciver"  id="semester" required>
+                                                <select class="form-control col-lg-9 text-left" aria-placeholder="" type="number" oninput="dropdown(this.id)"  name="reciver"  id="a$abc{{$user['balance']}}a{{$user['id']}}" required>
                                                     <option disabled selected>Select to whom who want to send the money</option>
                                                     @foreach($users as $myuser)
                                                     @if($myuser['id']!=$user['id'])
@@ -141,7 +141,7 @@
                                                 <label class="col-lg-2 " for="amt_transfer">
                                                     <h6>Amount: </h6>
                                                 </label>
-                                                <input type="number" value=0 placeholder="Enter the amount you want to transfer" class="form-control col-lg-9 text-left" oninput="validate(this.id)" id="{{$user['balance']}}a{{$user['id']}}" name="amt_transfer" aria-describedby="name" required>
+                                                <input type="number" value=1 placeholder="Enter the amount you want to transfer" class="form-control col-lg-9 text-left" oninput="validate(this.id)" id="{{$user['balance']}}a{{$user['id']}}" name="amt_transfer" aria-describedby="name" required>
 
 
                                             </div>
@@ -157,7 +157,7 @@
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" value="Submit" class="btn btn-primary" id="abc{{$user['balance']}}a{{$user['id']}}" onclick="myfunc()">Make Transaction</button>
+                                            <button type="submit" value="Submit" class="btn btn-primary" id="abc{{$user['balance']}}a{{$user['id']}}" onclick="myfunc()" disabled>Make Transaction</button>
                                         </div>
                                     </form>
                                 </div>
@@ -190,6 +190,12 @@
             }
             else{
                 document.getElementById("abc"+id).disabled=false;
+            }
+        }
+        function dropdown(id){
+            var drop=id.split('$');
+            if(document.getElementById(id).value!="Select to whom who want to send the money"){
+                document.getElementById(drop[1]).disabled=false;
             }
         }
     </script>
