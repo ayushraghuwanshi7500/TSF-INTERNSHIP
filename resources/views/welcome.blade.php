@@ -7,15 +7,25 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    a:hover{
-        text-decoration: none;
-    }
-    a:hover h5{
-        
-        font-size: 1.3rem;
-    }
-    
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:hover h5 {
+
+            font-size: 1.3rem;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            
+        }
     </style>
 </head>
 
@@ -110,6 +120,35 @@
             </div>
         </div>
     </div>
+    <!-- <footer class="bg-light footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col col-lg-12">
+                    Copyright @2021 Ayush Raghuwanshi
+
+
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col col-lg-4">
+
+                </div>
+                <div class="col col-lg-4">
+                    <a href=""><i style="padding-right:20px;" class="fab fa-github fa-2x"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href=""><i style="padding-left:20px;" class="fab fa-facebook fa-2x"></i></a>
+                </div>
+                <div class="col col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </footer> -->
 </body>
 
 </html>
