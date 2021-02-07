@@ -121,7 +121,7 @@
                                                 <label class="col-lg-2 " for="sender">
                                                     <h6>From:</h6>
                                                 </label>
-                                                <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-9 text-left" id="name" name="sender" aria-describedby="name" value="{{$user['username']}}-(Balance-{{$user['balance']}})" readonly>
+                                                <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-9 text-left" id="name" name="sender" aria-describedby="name" value="{{$user['username']}}" readonly>
 
                                             </div>
                                             <div class="form-group row">
@@ -132,7 +132,7 @@
                                                     <option disabled selected>Select to whom who want to send the money</option>
                                                     @foreach($users as $myuser)
                                                     @if($myuser['id']!=$user['id'])
-                                                    <option value="{{$myuser['username']}}">{{$myuser['username']}}-(Balance-{{$myuser['balance']}})</option>
+                                                    <option value="{{$myuser['username']}}">{{$myuser['username']}}</option>
                                                     @endif
                                                     @endforeach
                                                 </select>
@@ -185,9 +185,7 @@
         function validate(id){
             var balance=id.split('a');
             var myval=document.getElementById(id).value;
-            if(document.getElementById(id).value==""){
-                document.getElementById("abc"+id).disabled=true;
-            }
+            
             if(parseInt(myval)>parseInt(balance[0])){
                 document.getElementById("abc"+id).disabled=true;
             }
