@@ -53,25 +53,25 @@
                     <label class="col-lg-4 text-center" for="name">
                         <h6>Name</h6>
                     </label>
-                    <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-6 text-left" id="name" name="username" aria-describedby="name" required>
+                    <input type="text" placeholder="Enter the name of the user" class="form-control col-lg-6 text-left validate" id="name" name="username" aria-describedby="name" oninput="validate()" required>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-4 text-center" for="emailid">
                         <h6>Email address</h6>
                     </label>
-                    <input type="email" placeholder="Enter the email address of the user" class="form-control col-lg-6 text-left" id="emailid" name="email" aria-describedby="emailHelp" required>
+                    <input type="email" placeholder="Enter the email address of the user" class="form-control col-lg-6 text-left validate" id="emailid" name="email" aria-describedby="emailHelp" oninput="validate()"  required>
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-4 text-center" for="balance">
                         <h6>Balance in Account</h6>
                     </label>
-                    <input type="number" placeholder="Enter the balance in the account of the user" class="form-control col-lg-6 text-left" id="balance" name="balance" aria-describedby="balance" required>
+                    <input type="number" placeholder="Enter the balance in the account of the user" class="form-control col-lg-6 text-left validate" id="balance" name="balance" aria-describedby="balance" oninput="validate()"  required>
                 </div>
                 <br>
                 <div class="form-group row">
                     <div class="col col-lg-12 text-center">
-                        <button type="submit" value="Submit" class="btn btn-success" onclick="myfunc()" >Create User</button>
-                        <button type="button" class="btn btn-danger" onclick="reset()">Reset Info</button>
+                        <button type="submit" value="Submit" id="create" class="btn btn-success" onclick="myfunc()" disabled>Create User</button>
+                        <button type="button" class="btn btn-danger" onclick="resetinfo()">Reset Info</button>
                     </div>
                 </div>
 
@@ -102,11 +102,23 @@
         function myfunc(){
             alert("User Created Successfully!");
         }
-        function reset(){
+        function resetinfo(){
+            $('#create').attr('disabled' , true);
             document.getElementById('name').value="";
             document.getElementById('emailid').value="";
             document.getElementById('balance').value="";
-            
+        }
+        function validate(){
+            check=false;
+            var validateList=document.getElementsByClassName('validate');
+            for(var i=0;i<validateList.length;i++){
+                if(validateList[i].value==""){
+                    check=true;
+                    break
+                }
+                check=false;
+            }
+            document.getElementById('create').disabled=check;
         }
     </script>
 
