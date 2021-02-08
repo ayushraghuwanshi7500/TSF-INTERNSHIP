@@ -71,7 +71,7 @@
                 <div class="form-group row">
                     <div class="col col-lg-12 text-center">
                         <button type="submit" value="Submit" class="btn btn-success" onclick="myfunc()" >Create User</button>
-                        <button type="button" class="btn btn-danger ">Reset Info</button>
+                        <button type="button" class="btn btn-danger" onclick="reset()">Reset Info</button>
                     </div>
                 </div>
 
@@ -101,6 +101,12 @@
     <script>
         function myfunc(){
             alert("User Created Successfully!");
+        }
+        function reset(){
+            document.getElementById('name').value="";
+            document.getElementById('emailid').value="";
+            document.getElementById('balance').value="";
+            
         }
     </script>
 
